@@ -30,6 +30,7 @@ function styles() {
 }
 
 function watchTask() {
+	livereload.listen();
 	watch(
 		[files.templatesPath, files.stylesPath],
 		parallel(templates, styles)
