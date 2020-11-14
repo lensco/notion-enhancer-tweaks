@@ -1,5 +1,5 @@
 # Notion Enhancer Tweaks
-Collection of tweaks and user styles for the Desktop version of Notion, loaded into notion-enhancer. You don't need to run this entire project, you can just get the generated CSS file and load it into notion-enhancer.
+Collection of tweaks and user styles for the Desktop version of [Notion](http://notion.so), loaded into [notion-enhancer](https://github.com/notion-enhancer/notion-enhancer). You don't need to run this entire project, you can just get the generated CSS file and load it into notion-enhancer.
 
 This project consists of:
 - A Stylus file, and its compiled result `notion-enhancer-tweaks.css`
