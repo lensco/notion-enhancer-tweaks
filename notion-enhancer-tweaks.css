@@ -1,0 +1,171 @@
+:root {
+  --theme_light--font_sans: 'SF Pro Display';
+  --theme_dark--font_sans: 'SF Pro Display';
+/* Colors */
+  --theme_light--primary: #076cf1;
+  --theme_dark--primary: #4a99ff;
+  --theme_light--text_gray: #999;
+  --theme_light--bg_gray: rgba(153,153,153,0.15);
+  --theme_light--bg_gray-text: #858583;
+  --theme_light--line_gray: rgba(153,153,153,0.15);
+  --theme_light--line_gray-text: #858583;
+  --theme_dark--bg_gray: rgba(153,153,153,0.35);
+  --theme_dark--bg_gray-text: rgba(219,219,219,0.93);
+  --theme_dark--line_gray: rgba(153,153,153,0.35);
+  --theme_dark--line_gray-text: rgba(219,219,219,0.93);
+  --theme_light--text_brown: #c3763a;
+  --theme_light--bg_brown: rgba(195,118,58,0.15);
+  --theme_light--bg_brown-text: #a76937;
+  --theme_light--line_brown: rgba(195,118,58,0.15);
+  --theme_light--line_brown-text: #a76937;
+  --theme_dark--bg_brown: rgba(195,118,58,0.35);
+  --theme_dark--bg_brown-text: rgba(234,207,187,0.93);
+  --theme_dark--line_brown: rgba(195,118,58,0.35);
+  --theme_dark--line_brown-text: rgba(234,207,187,0.93);
+  --theme_light--text_orange: #ff6000;
+  --theme_light--bg_orange: rgba(255,96,0,0.15);
+  --theme_light--bg_orange-text: #d75709;
+  --theme_light--line_orange: rgba(255,96,0,0.15);
+  --theme_light--line_orange-text: #d75709;
+  --theme_dark--bg_orange: rgba(255,96,0,0.35);
+  --theme_dark--bg_orange-text: rgba(255,200,167,0.93);
+  --theme_dark--line_orange: rgba(255,96,0,0.35);
+  --theme_dark--line_orange-text: rgba(255,200,167,0.93);
+  --theme_light--text_yellow: #e2bf00;
+  --theme_light--bg_yellow: rgba(226,191,0,0.15);
+  --theme_light--bg_yellow-text: #bfa309;
+  --theme_light--line_yellow: rgba(226,191,0,0.15);
+  --theme_light--line_yellow-text: #bfa309;
+  --theme_dark--bg_yellow: rgba(226,191,0,0.35);
+  --theme_dark--bg_yellow-text: rgba(245,233,167,0.93);
+  --theme_dark--line_yellow: rgba(226,191,0,0.35);
+  --theme_dark--line_yellow-text: rgba(245,233,167,0.93);
+  --theme_light--text_green: #00991a;
+  --theme_light--bg_green: rgba(0,153,26,0.15);
+  --theme_light--bg_green-text: #0a851e;
+  --theme_light--line_green: rgba(0,153,26,0.15);
+  --theme_light--line_green-text: #0a851e;
+  --theme_dark--bg_green: rgba(0,153,26,0.35);
+  --theme_dark--bg_green-text: rgba(167,219,176,0.93);
+  --theme_dark--line_green: rgba(0,153,26,0.35);
+  --theme_dark--line_green-text: rgba(167,219,176,0.93);
+  --theme_light--text_blue: #076cf1;
+  --theme_light--bg_blue: rgba(7,108,241,0.15);
+  --theme_light--bg_blue-text: #1061ca;
+  --theme_light--line_blue: rgba(7,108,241,0.15);
+  --theme_light--line_blue-text: #1061ca;
+  --theme_dark--bg_blue: rgba(7,108,241,0.35);
+  --theme_dark--bg_blue-text: rgba(169,204,250,0.93);
+  --theme_dark--line_blue: rgba(7,108,241,0.35);
+  --theme_dark--line_blue-text: rgba(169,204,250,0.93);
+  --theme_light--text_purple: #9a66ff;
+  --theme_light--bg_purple: rgba(154,102,255,0.15);
+  --theme_light--bg_purple-text: #865cd5;
+  --theme_light--line_purple: rgba(154,102,255,0.15);
+  --theme_light--line_purple-text: #865cd5;
+  --theme_dark--bg_purple: rgba(154,102,255,0.35);
+  --theme_dark--bg_purple-text: rgba(220,202,255,0.93);
+  --theme_dark--line_purple: rgba(154,102,255,0.35);
+  --theme_dark--line_purple-text: rgba(220,202,255,0.93);
+  --theme_light--text_pink: #ff5dbb;
+  --theme_light--bg_pink: rgba(255,93,187,0.15);
+  --theme_light--bg_pink-text: #d7559f;
+  --theme_light--line_pink: rgba(255,93,187,0.15);
+  --theme_light--line_pink-text: #d7559f;
+  --theme_dark--bg_pink: rgba(255,93,187,0.35);
+  --theme_dark--bg_pink-text: rgba(255,199,231,0.93);
+  --theme_dark--line_pink: rgba(255,93,187,0.35);
+  --theme_dark--line_pink-text: rgba(255,199,231,0.93);
+  --theme_light--text_red: #fa0000;
+  --theme_light--bg_red: rgba(250,0,0,0.15);
+  --theme_light--bg_red-text: #d30a09;
+  --theme_light--line_red: rgba(250,0,0,0.15);
+  --theme_light--line_red-text: #d30a09;
+  --theme_dark--bg_red: rgba(250,0,0,0.35);
+  --theme_dark--bg_red-text: rgba(253,167,167,0.93);
+  --theme_dark--line_red: rgba(250,0,0,0.35);
+  --theme_dark--line_red-text: rgba(253,167,167,0.93);
+}
+/* hide board view 'add a group' */
+.notion-board-view > [data-block-id] > div:last-child,
+.notion-board-view > [data-block-id] > div:first-child > div:last-child {
+  display: none !important;
+}
+/* hide '+ new' board row */
+
+.notion-board-group [style='user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; flex-shrink: 0; white-space: nowrap; height: 32px; border-radius: 3px; font-size: 14px; line-height: 1.2; min-width: 0px; padding-left: 6px; padding-right: 8px; color: rgba(55, 53, 47, 0.4); width: 100%;'] {
+	display: none !important;
+}
+/* make checkboxes less pointy */
+.notion-to_do-block > div > div > div {
+  overflow: hidden;
+  border-radius: 2px;
+}
+/* make links blue */
+.notion-link-token span {
+  border-bottom: 0 !important;
+  opacity: 1 !important;
+  color: var(--theme_light--primary) !important;
+}
+.notion-link-token span:hover {
+  color: #2167c1 !important;
+}
+.notion-body.dark .notion-link-token span {
+  color: var(--theme_dark--primary) !important;
+}
+.notion-body.dark .notion-link-token span:hover {
+  color: #86bbff !important;
+}
+/* truncate page links */
+.notion-page-mention-token {
+  max-width: 10em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* improve list styles */
+.notion-bulleted_list-block [style*='font-size: 1.5em; line-height: 1; margin-bottom: 0.1em;'] {
+  font-size: 1.2em !important;
+  visibility: hidden;
+  position: relative;
+  margin-bottom: 0 !important;
+}
+.notion-bulleted_list-block [style*='font-size: 1.5em; line-height: 1; margin-bottom: 0.1em;']:after {
+  content: "";
+  position: absolute;
+  top: 0.1em;
+  visibility: visible;
+  display: list-item;
+  list-style: disc inside;
+}
+.notion-bulleted_list-block .notion-bulleted_list-block [style*='font-size: 1.5em; line-height: 1; margin-bottom: 0.1em;']:after {
+  list-style-type: circle;
+}
+.notion-bulleted_list-block .notion-bulleted_list-block .notion-bulleted_list-block [style*='font-size: 1.5em; line-height: 1; margin-bottom: 0.1em;']:after {
+  list-style-type: square;
+}
+/* tighter list spacing */
+.notion-bulleted_list-block > div > div {
+  min-height: 0 !important;
+  margin-right: 0 !important;
+}
+.notion-bulleted_list-block [contenteditable] {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+/* nicer highlight blocks */
+[style*='background:rgb('] {
+  padding-bottom: 1px !important;
+  border-radius: 2px;
+}
+.notion-text-block > [style*='background: rgb('] {
+  border-radius: 2px;
+}
+/* nicer divider line */
+.notion-divider-block {
+  margin: 1em 0 !important;
+}
+/* hide prompt */
+[contenteditable]:empty:before {
+  display: none !important;
+}

@@ -1,0 +1,143 @@
+// Color hash
+colors = {
+	gray: #999
+	brown: #c3763a
+	orange: #ff6000
+	yellow: #e2bf00
+	green: #00991a
+	blue: #076cf1
+	purple: #9a66ff
+	pink: #ff5dbb
+	red: #fa0000
+}
+
+text_light = #37352f
+text_dark = rgba(255,255,255,.9)
+
+
+:root
+	--theme_light--font_sans 'SF Pro Display'
+	--theme_dark--font_sans 'SF Pro Display'
+
+	/* Colors */
+	--theme_light--primary colors.blue
+	--theme_dark--primary #4a99ff
+
+	for $color, value in colors
+		--theme_light--text_{$color} value
+		--theme_light--bg_{$color} alpha(value, 15%)
+		--theme_light--bg_{$color}-text mix(value, text_light, 80%)
+		--theme_light--line_{$color} alpha(value, 15%)
+		--theme_light--line_{$color}-text mix(value, text_light, 80%)
+		--theme_dark--bg_{$color} alpha(value, 35%)
+		--theme_dark--bg_{$color}-text mix(value, text_dark, 30%)
+		--theme_dark--line_{$color} alpha(value, 35%)
+		--theme_dark--line_{$color}-text mix(value, text_dark, 30%)
+
+
+// 	--theme--page_banner-height
+// 	--theme--page_normal-width
+// 	--theme--text-block_line-height
+
+
+/* hide board view 'add a group' */
+.notion-board-view > [data-block-id] > div:last-child,
+.notion-board-view > [data-block-id] > div:first-child > div:last-child
+	display none !important
+
+
+/* hide '+ new' board row */
+@css {
+.notion-board-group [style='user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; flex-shrink: 0; white-space: nowrap; height: 32px; border-radius: 3px; font-size: 14px; line-height: 1.2; min-width: 0px; padding-left: 6px; padding-right: 8px; color: rgba(55, 53, 47, 0.4); width: 100%;'] {
+	display: none !important;
+}
+}
+
+
+/* make checkboxes less pointy */
+.notion-to_do-block > div > div > div
+	overflow hidden
+	border-radius 2px
+
+
+/* make links blue */
+.notion-link-token span
+	border-bottom 0 !important
+	opacity 1 !important
+	color var(--theme_light--primary) !important
+
+	&:hover
+		color #2167c1 !important
+
+	.notion-body.dark &
+		color var(--theme_dark--primary) !important
+
+		&:hover
+			color #86bbff !important
+
+
+/* truncate page links */
+.notion-page-mention-token
+	max-width 10em
+	overflow hidden
+	white-space nowrap
+	text-overflow ellipsis
+
+
+/* improve list styles */
+.notion-bulleted_list-block [style*='font-size: 1.5em; line-height: 1; margin-bottom: 0.1em;']
+	font-size 1.2em !important
+	visibility hidden
+	position relative
+	margin-bottom: 0 !important
+
+	&:after
+		content ""
+		position absolute
+		top .1em
+		visibility visible
+		display list-item
+		list-style disc inside
+
+		.notion-bulleted_list-block &
+			list-style-type circle
+
+			.notion-bulleted_list-block &
+				list-style-type square
+
+
+/* tighter list spacing */
+.notion-bulleted_list-block
+	& > div > div
+		min-height 0 !important
+		margin-right 0 !important
+
+	[contenteditable]
+		padding-top 0 !important
+		padding-bottom 0 !important
+
+
+/* nicer highlight blocks */
+[style*='background:rgb(']
+	padding-bottom 1px !important
+	border-radius 2px
+
+.notion-text-block > [style*='background: rgb(']
+	border-radius 2px
+
+
+/* nicer divider line */
+.notion-divider-block
+	margin 1em 0 !important
+
+
+/* hide prompt */
+[contenteditable]:empty:before
+	display none !important
+
+
+// /* improve board padding */
+// .notion-board-view {
+// 	padding-left: 1em !important;
+// 	padding-right: 1em !important;
+// }

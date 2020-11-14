@@ -1,0 +1,36 @@
+@import "notion-enhancer-tweaks"
+
+body
+	font-family SF Pro Display, sans-serif
+	line-height 1.5
+	margin 0
+	padding 0
+	display flex
+
+.light, .dark
+	flex-grow 1
+	padding 2em 3em
+
+	div
+		margin .2em 0
+
+.dark
+	background #2f3437
+	color #fff
+
+.bg
+	display inline-block
+
+
+for $color, value in colors
+	&.{$color}
+		color unquote("var(--theme_light--text_" + $color + ")")
+
+	.light .{$color} .bg
+		background unquote("var(--theme_light--bg_" + $color + ")")
+		color unquote("var(--theme_light--bg_" + $color + "-text" + ")")
+
+	.dark .{$color} .bg
+		background unquote("var(--theme_dark--bg_" + $color + ")")
+		color unquote("var(--theme_dark--bg_" + $color + "-text" + ")")
+
