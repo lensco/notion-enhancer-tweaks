@@ -118,7 +118,8 @@
 }
 /* truncate page links */
 .notion-page-mention-token {
-  max-width: 10em;
+  max-width: 18em;
+  display: inline-block;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
